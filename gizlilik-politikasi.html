@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kasa – Gizlilik Politikası</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; padding: 32px 20px 64px; max-width: 760px;
+    font: 16px/1.65 -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #16191c; background: #f6f9fa;
+  }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 34px 0 8px; }
+  h3 { font-size: 16px; margin: 20px 0 6px; }
+  .tarih { color: #4a5459; font-size: 14px; margin: 0 0 28px; }
+  ul { padding-left: 20px; }
+  li { margin: 6px 0; }
+  .ozet { background: #dce7ff; color: #00276b; border-radius: 12px; padding: 16px 18px; margin: 24px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 15px; }
+  th, td { border: 1px solid #c7d0d5; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #eaeff2; }
+  a { color: #1466f0; }
+  footer { margin-top: 44px; padding-top: 16px; border-top: 1px solid #c7d0d5; color: #4a5459; font-size: 14px; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e4e9ec; background: #0f1215; }
+    .ozet { background: #143a78; color: #dce7ff; }
+    .tarih, footer { color: #a8b2b9; }
+    th, td { border-color: #333b40; }
+    th { background: #1f252a; }
+    footer { border-top-color: #333b40; }
+    a { color: #8fb4ff; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Kasa – Şifre Yöneticisi · Gizlilik Politikası</h1>
+<p class="tarih">Yürürlük tarihi: 20 Eylül 2026 · Sürüm 1.0</p>
+
+<div class="ozet">
+  <strong>Özet:</strong> Kasa hiçbir kişisel veri toplamaz, işlemez, saklamaz ya da
+  aktarmaz. Uygulamanın internet erişim izni yoktur; verileriniz teknik olarak
+  cihazınızdan çıkamaz. Hesap açmanız gerekmez, sunucumuz yoktur, reklam ve analiz
+  aracı içermez.
+</div>
+
+<h2>1. Bu politika kimin, neyi kapsıyor?</h2>
+<p>
+  Bu politika, Google Play'de <strong>Kasa – Şifre Yöneticisi</strong> adıyla sunulan
+  ve uygulama kimliği <code>com.psswrd.vault</code> olan Android uygulamasını kapsar.
+  Aşağıda "Uygulama" denildiğinde bu yazılım kastedilir.
+</p>
+<p>
+  Uygulama kullanıcıdan veri toplamadığı için, veri koruma mevzuatı anlamında bir
+  "veri sorumlusu"ndan söz edilmesini gerektiren bir işleme faaliyeti bulunmamaktadır.
+  Yine de her türlü soru ve talebiniz için iletişim adresi bu politikanın sonundadır.
+</p>
+
+<h2>2. Toplanan veriler</h2>
+<p><strong>Hiçbiri.</strong> Uygulama aşağıdakilerin hiçbirini toplamaz:</p>
+<ul>
+  <li>Ad, soyad, e-posta, telefon numarası gibi kimlik bilgileri</li>
+  <li>Konum bilgisi</li>
+  <li>Cihaz kimliği, reklam kimliği, IP adresi</li>
+  <li>Kullanım istatistikleri, çökme kayıtları, analitik veriler</li>
+  <li>Kişi listesi, çağrı kaydı, mesajlar, dosyalar</li>
+  <li>Uygulamaya kaydettiğiniz hesap bilgileri, şifreler, notlar ve 2FA anahtarları</li>
+</ul>
+<p>
+  Uygulamada reklam ağı, analiz altyapısı, çökme raporlama servisi ve takip kodu
+  bulunmamaktadır.
+</p>
+
+<h2>3. Girdiğiniz veriler nerede saklanıyor?</h2>
+<p>
+  Uygulamaya kaydettiğiniz her şey yalnızca kendi cihazınızın uygulama alanında,
+  şifrelenmiş tek bir dosyada tutulur. Bu dosya:
+</p>
+<ul>
+  <li>Ana şifrenizden türetilen bir anahtarla şifrelenir (Argon2id anahtar türetme,
+      AES-256-GCM şifreleme).</li>
+  <li>Ayrıca cihazın güvenli donanım anahtar deposuna (Android Keystore) bağlanır;
+      dosya başka bir cihaza kopyalansa bile orada açılamaz.</li>
+  <li>Cihazın diğer uygulamaları tarafından okunamaz.</li>
+</ul>
+<p>
+  <strong>Ana şifreniz hiçbir yerde saklanmaz</strong> — ne cihazda, ne başka bir yerde.
+  Bu nedenle ana şifrenizi unutmanız hâlinde kasanızın açılması, kurtarılması veya
+  sıfırlanması <strong>mümkün değildir</strong>. Bu, hatalı bir davranış değil, tasarımın
+  kendisidir.
+</p>
+
+<h2>4. İzinler ve neden istendikleri</h2>
+<table>
+  <tr><th>İzin</th><th>Amaç</th><th>Veri nereye gider?</th></tr>
+  <tr>
+    <td>Kamera</td>
+    <td>Yalnızca iki adımlı doğrulama kurulum karekodunu okumak için. İzni
+        vermezseniz anahtarı elle girebilirsiniz.</td>
+    <td>Hiçbir yere. Görüntü anlık olarak çözülür, kaydedilmez.</td>
+  </tr>
+  <tr>
+    <td>Bildirim (Android 13+)</td>
+    <td>Kullanılmaz.</td>
+    <td>—</td>
+  </tr>
+  <tr>
+    <td>İnternet</td>
+    <td><strong>İstenmez.</strong> Uygulamanın internet erişim izni yoktur.</td>
+    <td>—</td>
+  </tr>
+</table>
+
+<h2>5. Otomatik doldurma</h2>
+<p>
+  Otomatik doldurmayı açmak isteğe bağlıdır ve Android'in sistem ayarından
+  etkinleştirilir. Etkinken Uygulama, yalnızca desteklenen tarayıcılarda o anda açık olan
+  sayfanın alan adını sistemden alır ve kasanızda buna uyan bir kayıt varsa önerir.
+  Bu bilgi kaydedilmez, kayıt altına alınmaz ve hiçbir yere gönderilmez; yalnızca o anda,
+  cihazın içinde kullanılır. Kasa kilitliyken hiçbir kimlik bilgisi sunulmaz.
+</p>
+
+<h2>6. Yedekleme</h2>
+<p>
+  Yedek almak tamamen sizin tercihinizdir. Yedek dosyası şifrelenmiş olarak üretilir ve
+  cihazınızda sizin seçtiğiniz konuma kaydedilir. Dosya geliştiriciye veya herhangi bir
+  üçüncü tarafa gönderilmez. Yedek dosyası yalnızca ana şifreniz <em>ve</em> uygulamanın
+  ürettiği kurtarma anahtarıyla birlikte açılabilir.
+</p>
+<p>
+  Yedeği bir buluta yüklemeniz, e-posta ile göndermeniz veya paylaşmanız hâlinde dosyanın
+  güvenliği tamamen sizin sorumluluğunuzdadır; dosya o andan itibaren seçtiğiniz servisin
+  koşullarına tabidir.
+</p>
+
+<h2>7. Veri saklama ve silme</h2>
+<p>
+  Geliştiricinin elinde saklanan hiçbir kullanıcı verisi olmadığı için silinmesi gereken
+  bir kayıt da bulunmamaktadır. Cihazınızdaki verileri istediğiniz an kendiniz
+  silebilirsiniz:
+</p>
+<ul>
+  <li>Tek tek kayıtları uygulama içinden silebilirsiniz.</li>
+  <li>Android Ayarlar → Uygulamalar → Kasa → Depolama → <em>Verileri temizle</em>
+      seçeneği kasanın tamamını siler.</li>
+  <li>Uygulamayı kaldırmanız da uygulama verilerini cihazdan siler.</li>
+</ul>
+<p>
+  Bu işlemler geri alınamaz. Yedeğiniz yoksa veriler kalıcı olarak kaybolur.
+  Hesap açılmadığı için silinecek bir hesap da yoktur.
+</p>
+
+<h2>8. Üçüncü taraflarla paylaşım</h2>
+<p>
+  Hiçbir veri paylaşılmaz, satılmaz veya aktarılmaz; çünkü hiçbir veri toplanmaz.
+  Uygulama üçüncü taraf servis, reklam ağı, ödeme altyapısı veya analiz aracı içermez.
+  Veriler ülke dışına aktarılmaz, çünkü herhangi bir aktarım yapılmaz.
+</p>
+<p>
+  Uygulama açık kaynaklı kütüphaneler kullanır (şifreleme ve karekod okuma gibi).
+  Bu kütüphaneler cihaz içinde çalışır; veri toplamaz veya iletmez.
+</p>
+
+<h2>9. Güvenlik önlemleri</h2>
+<ul>
+  <li>Her açılışta ana şifre istenir; biyometrik geçiş yoktur.</li>
+  <li>Ekran kapandığında kasa anında, uygulamadan çıkıldığında kısa süre sonra kilitlenir.</li>
+  <li>Kasa ekranlarında ekran görüntüsü alınamaz ve içerik son kullanılanlar listesinde
+      görünmez.</li>
+  <li>Kopyalanan şifre kısa süre sonra panodan temizlenir.</li>
+  <li>Yanlış şifre denemelerinde bekleme süresi kademeli olarak artar.</li>
+</ul>
+<p>
+  Hiçbir güvenlik önlemi mutlak koruma sağlamaz. Cihazınızın kök erişimine (root) açık
+  olması, kötü amaçlı yazılım bulundurması, güncel olmayan bir Android sürümü çalıştırması
+  ya da ana şifrenizin başkalarınca bilinmesi hâlinde bu önlemler etkisiz kalabilir.
+</p>
+
+<h2>10. Kullanıcının sorumluluğu</h2>
+<ul>
+  <li>Ana şifrenizi ve kurtarma anahtarınızı güvenli biçimde saklamak size aittir.</li>
+  <li>Düzenli yedek almak ve yedeği güvenli bir yerde tutmak size aittir.</li>
+  <li>Cihazınızın kilidini, güncelliğini ve güvenliğini sağlamak size aittir.</li>
+</ul>
+
+<h2>11. Bu politikadaki değişiklikler</h2>
+<p>
+  Politika değişirse bu sayfa güncellenir ve yukarıdaki yürürlük tarihi ile sürüm numarası
+  yenilenir. Uygulamayı kullanmaya devam etmeniz güncel politikayı kabul ettiğiniz anlamına
+  gelir.
+</p>
+
+<h2>12. İletişim</h2>
+<p>
+  Gizlilikle ilgili her türlü soru ve talep için:
+  <a href="mailto:parametreapp@gmail.com">parametreapp@gmail.com</a>
+</p>
+
+<footer>
+  Kasa – Şifre Yöneticisi · <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+</footer>
+
+</body>
+</html>
